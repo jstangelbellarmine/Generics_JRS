@@ -1,0 +1,81 @@
+package main;
+
+import linkedlist.GenericNode;
+import linkedlist.GenericLinkedList;
+
+public class TestLinkedList {
+
+    public static void main(String[] args) {
+/*n
+ * LinkedList myList=new LinkedList();
+ *		
+ *
+ *	Node aNode=new Node();
+ *	aNode.setData("Element 1");
+ *	myList.addNode(aNode);
+ *	aNode = new Node();
+ *	aNode.setData("Element 2");
+ *	myList.addNode(aNode);
+		
+ *	Node tempnode=myList.getList();
+ *	do 
+ *	{
+ *		System.out.println(tempnode.getData());
+ *		tempnode=tempnode.getNextNode();
+ *		} while (tempnode!=null);
+ */
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//Create 3 lists (String, Integer, Double) to make sure code works
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    	 System.out.println("++++++++++++++++++++++++++++++++++++++");//this is simply a style choice
+    	 
+        GenericLinkedList<String> stringList = new GenericLinkedList<>();//create new object
+
+        GenericNode<String> stringNode = new GenericNode<>();
+        stringNode.setData("In this section you'll see:");//first String data
+        stringList.addNode(stringNode);
+        stringNode = new GenericNode<>("2 String examples, 2 Integer Examples, and 2 Double exampples.");
+        stringList.addNode(stringNode);
+
+        GenericNode<String> tempStringNode = stringList.getList();
+        while (tempStringNode != null) {
+            System.out.println(tempStringNode.getData());
+            tempStringNode = tempStringNode.getNextNode();
+        }//end GenericLinkedList<String>
+
+
+        GenericLinkedList<Integer> integerList = new GenericLinkedList<>();
+        GenericNode<Integer> integerNode = new GenericNode<>(1);
+        integerList.addNode(integerNode);
+        
+        integerNode = new GenericNode<>(2);
+        integerList.addNode(integerNode);
+        
+        System.out.println("++++++++++++++++++++++++++++++++++++++");//this is simply a style choice
+        System.out.println("Examples in integerList:");
+        GenericNode<Integer> tempIntegerNode = integerList.getList();
+        while (tempIntegerNode != null) {
+            System.out.println(tempIntegerNode.getData());
+            tempIntegerNode = tempIntegerNode.getNextNode();
+        }//end GenericLinkedList<Integer>
+        
+        System.out.println("++++++++++++++++++++++++++++++++++++++");//this is simply a style choice 
+        GenericLinkedList<Double> doubleList = new GenericLinkedList<>();
+        GenericNode<Double> doubleNode = new GenericNode<>(1.1);
+        doubleList.addNode(doubleNode);
+        
+        doubleNode = new GenericNode<>(2.2);
+        doubleList.addNode(doubleNode);
+        
+        System.out.println("Examples in doubleList:");
+        GenericNode<Double> tempDoubleNode = doubleList.getList();
+        while (tempDoubleNode != null) {
+            System.out.println(tempDoubleNode.getData());
+            tempDoubleNode = tempDoubleNode.getNextNode();
+        }//end GenericLinkedList<Doubles>
+    
+    }//end main
+
+
+}//end class
