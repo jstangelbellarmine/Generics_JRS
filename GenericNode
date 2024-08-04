@@ -1,0 +1,66 @@
+package linkedlist;
+
+/**
+ * This class models a Node object which contains a generic data type,
+ * which can be used to create any type of data. It holds data
+ *  and pointers to the next node in the list.
+ * 
+ * @author rkelley/njohnson/jstangel
+ * Programming Project 1 Start Project
+ * CS131ON
+ */
+public class GenericNode<T> {
+	
+	private T data;  //data that the object stores
+	private GenericNode<T> nextNode; //pointer to the nextNode that will be in LinkedList
+	
+	public GenericNode() {
+        this(null); // Calls the constructor with a data parameter
+    }//end constructor with null data
+    
+	public GenericNode(T data) {
+        this.data = data;
+        this.nextNode = null;
+    }//end constructor that allows data to be put in once instantiated in main
+	/**
+	 * This method sets the data of the object.
+	 * @param data
+	 */
+	public void setData(T data) {
+		this.data=data;
+	}//end setData
+	
+	/**
+	 * This method returns the data of the object.
+	 * @return generic (Integer, double, String, Boolean, etc.) data
+	 */
+	public T getData() {
+		return data;
+	}//end getData
+	
+	/**
+	 * This method returns itself to the caller.
+	 * @return
+	 */
+	public GenericNode<T> getNode() {
+		return this;
+	}//end getNode
+	
+	/**
+	 * This method updates the pointer for the next node.
+	 * @param nextNode
+	 */
+	public void setNextNode(GenericNode<T> nextNode)
+	{
+		this.nextNode=nextNode;
+	}//end setNextNode
+	
+	/**
+	 * This method returns the node stored in the next node pointer.
+	 * @return Node object
+	 */
+	public GenericNode<T> getNextNode() {
+		return nextNode;
+	}//end getNextNode
+	
+}//end class
