@@ -6,7 +6,7 @@ import linkedlist.GenericLinkedList;
 public class TestLinkedList {
 
     public static void main(String[] args) {
-/*n
+/*
  * LinkedList myList=new LinkedList();
  *		
  *
@@ -26,53 +26,57 @@ public class TestLinkedList {
  */
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-//Create 3 lists (String, Integer, Double) to make sure code works
+//Create 3 lists (String, Integer, Double) to make sure code works.
+//The first part of each section adds data to a newly-created list. 
+//the second part of each section uses a while statement to print out the data.
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    	
     	 System.out.println("++++++++++++++++++++++++++++++++++++++");//this is simply a style choice
     	 
         GenericLinkedList<String> stringList = new GenericLinkedList<>();//create new object
 
-        GenericNode<String> stringNode = new GenericNode<>();
-        stringNode.setData("In this section you'll see:");//first String data
-        stringList.addNode(stringNode);
-        stringNode = new GenericNode<>("2 String examples, 2 Integer Examples, and 2 Double exampples.");
-        stringList.addNode(stringNode);
-
-        GenericNode<String> tempStringNode = stringList.getList();
-        while (tempStringNode != null) {
-            System.out.println(tempStringNode.getData());
-            tempStringNode = tempStringNode.getNextNode();
+        GenericNode<String> stringNode = new GenericNode<>();//creates new node for String objects
+        stringNode.setData("In this section you'll see:");//states data
+        stringList.addNode(stringNode);//adds to node
+        stringNode = new GenericNode<>("3 String examples (including the previous one), 2 Integer examples, and 2 Double examples.");//states data
+        stringList.addNode(stringNode);//adds to node
+        stringNode = new GenericNode<>("The ''+'' signs are a style choice only, and have nothing to do with generics.");//states data
+        stringList.addNode(stringNode);//adds to node
+        
+        
+        GenericNode<String> tempStringNode = stringList.getList();//calls up the data in the String node
+        while (tempStringNode != null) {// while there are bits of information in the node, the following statement will be followed
+            System.out.println(tempStringNode.getData());//print out 1 section of node data at a time
+            tempStringNode = tempStringNode.getNextNode();//gets next node data, if available
         }//end GenericLinkedList<String>
 
-
-        GenericLinkedList<Integer> integerList = new GenericLinkedList<>();
-        GenericNode<Integer> integerNode = new GenericNode<>(1);
-        integerList.addNode(integerNode);
-        
-        integerNode = new GenericNode<>(2);
-        integerList.addNode(integerNode);
-        
         System.out.println("++++++++++++++++++++++++++++++++++++++");//this is simply a style choice
-        System.out.println("Examples in integerList:");
-        GenericNode<Integer> tempIntegerNode = integerList.getList();
-        while (tempIntegerNode != null) {
-            System.out.println(tempIntegerNode.getData());
-            tempIntegerNode = tempIntegerNode.getNextNode();
+
+        GenericLinkedList<Integer> integerList = new GenericLinkedList<>();//created Integerlist
+        GenericNode<Integer> integerNode = new GenericNode<>(64);//creates node with first data input (64)
+        integerList.addNode(integerNode);//adds to node
+        integerNode = new GenericNode<>(24);//second node data created
+        integerList.addNode(integerNode);//added to node
+        
+        System.out.println("Examples in integerList:");//not generics, this statement it used to explain output
+        GenericNode<Integer> tempIntegerNode = integerList.getList();//created to access data in IntegerList
+        while (tempIntegerNode != null) {//while there is data in the list, the following will happen
+            System.out.println(tempIntegerNode.getData());//prints out the data in each node
+            tempIntegerNode = tempIntegerNode.getNextNode();//cycles through each part of the list
         }//end GenericLinkedList<Integer>
         
         System.out.println("++++++++++++++++++++++++++++++++++++++");//this is simply a style choice 
-        GenericLinkedList<Double> doubleList = new GenericLinkedList<>();
-        GenericNode<Double> doubleNode = new GenericNode<>(1.1);
-        doubleList.addNode(doubleNode);
+        GenericLinkedList<Double> doubleList = new GenericLinkedList<>();//create list of type Double
+        GenericNode<Double> doubleNode = new GenericNode<>(2.7182);//first data point
+        doubleList.addNode(doubleNode);//adds to list
+        doubleNode = new GenericNode<>(3.14159);//second data point
+        doubleList.addNode(doubleNode);//adds to list
         
-        doubleNode = new GenericNode<>(2.2);
-        doubleList.addNode(doubleNode);
-        
-        System.out.println("Examples in doubleList:");
-        GenericNode<Double> tempDoubleNode = doubleList.getList();
-        while (tempDoubleNode != null) {
-            System.out.println(tempDoubleNode.getData());
-            tempDoubleNode = tempDoubleNode.getNextNode();
+        System.out.println("Examples in doubleList:");//not generics, this statement is used to explain output 
+        GenericNode<Double> tempDoubleNode = doubleList.getList();//greates a list of type Double
+        while (tempDoubleNode != null) {//if there is data in the list, do the following
+            System.out.println(tempDoubleNode.getData());//prints out the information in the node
+            tempDoubleNode = tempDoubleNode.getNextNode();//if more data exists, it accesses it and prints it out 
         }//end GenericLinkedList<Doubles>
     
     }//end main
