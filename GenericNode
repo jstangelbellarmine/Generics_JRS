@@ -63,4 +63,4 @@ public class GenericNode<T> {
 		return nextNode;
 	}//end getNextNode
 	
-}//end class
+}//end class 
